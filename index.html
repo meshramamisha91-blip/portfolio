@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Amisha Portfolio</title>
+
+<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<header>
+<h2 class="logo">Amisha</h2>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<button id="toggle">🌙</button>
+</header>
+
+<section id="home" class="hero glow">
+<h1>Hi, I'm <span>Amisha Meshram</span></h1>
+<p>Student | Web Developer</p>
+</section>
+
+<section id="about" class="section glow" data-aos="fade-up">
+<h2>About Me</h2>
+<p>I am Amisha Meshram passionate web developer learning HTML CSS JavaScript.</p>
+</section>
+
+<section id="skills" class="section glow" data-aos="fade-up">
+<h2>Skills</h2>
+
+<div class="skills">
+<span>HTML</span>
+<span>CSS</span>
+<span>JavaScript</span>
+<span>Python</span>
+<span>C</span>
+<span>C++</span>
+</div>
+</section>
+
+<section id="projects" class="section glow" data-aos="fade-up">
+
+<h2>Projects</h2>
+
+<div class="project">
+<h3>Registration Form</h3>
+<a href="https://shimmering-blini-46c97f.netlify.app/" target="_blank">View</a>
+</div>
+
+<div class="project">
+<h3>Email Automation</h3>
+<a href="https://reg-emailpdf-automation-a46bd6.netlify.app/" target="_blank">View</a>
+</div>
+
+<div class="project">
+<h3>AI Chatbot Interface</h3>
+<a href="https://drive.google.com/drive/folders/1SDr_uB7G3aDt1Jc9Ka0WvDOLR3iudpN0" target="_blank">View</a>
+</div>
+
+<div class="project">
+<h3>Personal Portfolio</h3>
+<a href="#">View</a>
+</div>
+
+</section>
+
+<section id="contact" class="section glow" data-aos="fade-up">
+
+<h2>Contact Me</h2>
+
+<p>📧 meshramamisha91@gmail.com</p>
+<p>📱 9158512192</p>
+
+
+<form id="contactForm">
+
+<input id="name" name="from_name" placeholder="Name" required>
+
+<input id="email" name="from_email" placeholder="Email" required>
+
+<textarea id="message" name="message" placeholder="Message"></textarea>
+
+<button type="submit">Send</button>
+
+</form>
+
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+AOS.init({duration:1200});
+
+document.getElementById("toggle").onclick=()=>{
+document.body.classList.toggle("light");
+};
+
+emailjs.init("LRg_kQn_llQ_HTo5W");
+
+document.getElementById("contactForm").addEventListener("submit",function(e){
+e.preventDefault();
+
+emailjs.send("service_5padp3b","template_fpy120a",{
+
+from_name: document.getElementById("name").value,
+from_email: document.getElementById("email").value,
+message: document.getElementById("message").value,
+to_email:"meshramamisha91@gmail.com"
+}).then(()=>{
+alert("Message Sent Successfully ✅");
+});
+
+
+});
+</script>
+
+</body>
+</html>
